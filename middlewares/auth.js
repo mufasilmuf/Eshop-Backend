@@ -1,7 +1,7 @@
 const jwt = require("jsonwebtoken");
 const db = require("../models");
 const User = db.users;
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 exports.Auth = async (req, res) => {
   const user = await User.findOne({ email: req.body.email });
