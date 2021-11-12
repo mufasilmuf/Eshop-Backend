@@ -24,6 +24,7 @@ exports.Auth = async (req, res) => {
     res.status(200).json({
       email: user.email,
       name: user.last_name,
+      role: user.role,
       isAuthenticated: true,
       token: token,
     });

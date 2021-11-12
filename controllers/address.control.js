@@ -5,8 +5,7 @@ const Address = db.addresses;
 const User = db.users;
 
 exports.AddAdress = async (req, res) => {
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im11ZmVldGhAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJpYXQiOjE2MzY2MTM5NTgsImV4cCI6MTYzNjcwMDM1OH0.lc1A-aNlXd49hvTAHatKz9EXcfCPRmK7RWuCTXKRhk0";
+  const token = req.headers["Authorization"];
 
   try {
     const decode = await jwt.verify(token, "secret100");

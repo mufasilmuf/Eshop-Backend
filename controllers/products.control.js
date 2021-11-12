@@ -35,8 +35,7 @@ exports.findById = async (req, res) => {
 //below three function are accessable by Admin...
 
 exports.addProducts = async (req, res) => {
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im11ZmFzaWxAZ21haWwuY29tIiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNjM2NjA5OTQ1LCJleHAiOjE2MzY2OTYzNDV9.xhXd_8zAY4q4oOELgr4VgSXNm7XraXTAVRb685KdgIQ";
+  const token = req.headers["Authorization"];
 
   try {
     const decode = await jwt.verify(token, "secret100");
@@ -76,8 +75,7 @@ exports.addProducts = async (req, res) => {
 };
 
 exports.deleteProductById = async (req, res) => {
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im11ZmFzaWxAZ21haWwuY29tIiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNjM2NjA5OTQ1LCJleHAiOjE2MzY2OTYzNDV9.xhXd_8zAY4q4oOELgr4VgSXNm7XraXTAVRb685KdgIQ";
+  const token = req.headers["Authorization"];
 
   try {
     const decode = await jwt.verify(token, "secret100");
@@ -106,8 +104,7 @@ exports.deleteProductById = async (req, res) => {
 };
 
 exports.updateProductsById = async (req, res) => {
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im11ZmFzaWxAZ21haWwuY29tIiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNjM2NjA5OTQ1LCJleHAiOjE2MzY2OTYzNDV9.xhXd_8zAY4q4oOELgr4VgSXNm7XraXTAVRb685KdgIQ";
+  const token = req.headers["Authorization"];
 
   try {
     const decode = await jwt.verify(token, "secret100");
