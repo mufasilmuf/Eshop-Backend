@@ -7,7 +7,7 @@ const products = db.products;
 const addresses = db.addresses;
 
 exports.createOrder = async (req, res) => {
-  const token = req.headers["Authorization"];
+  const token = req.headers.authorization;
 
   try {
     const decoded = await jwt.verify(token, "secret100");

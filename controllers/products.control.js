@@ -35,7 +35,7 @@ exports.findById = async (req, res) => {
 //below three function are accessable by Admin...
 
 exports.addProducts = async (req, res) => {
-  const token = req.headers["Authorization"];
+  const token = req.headers.authorization;
 
   try {
     const decode = await jwt.verify(token, "secret100");
@@ -75,7 +75,7 @@ exports.addProducts = async (req, res) => {
 };
 
 exports.deleteProductById = async (req, res) => {
-  const token = req.headers["Authorization"];
+  const token = req.headers.authorization;
 
   try {
     const decode = await jwt.verify(token, "secret100");
@@ -104,7 +104,7 @@ exports.deleteProductById = async (req, res) => {
 };
 
 exports.updateProductsById = async (req, res) => {
-  const token = req.headers["Authorization"];
+  const token = req.headers.authorization;
 
   try {
     const decode = await jwt.verify(token, "secret100");
