@@ -127,7 +127,7 @@ exports.updateProductsById = async (req, res) => {
             description: req.body.description,
             manufacturer: req.body.manufacturer,
             availableItems: req.body.availableItems,
-            image_url: req.body.image_url,
+            imageURL: req.body.imageURL,
           },
         }
       )
