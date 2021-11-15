@@ -9,7 +9,7 @@ module.exports = (mongoose) => {
         description: { type: String, require: true },
         manufacturer: { type: String, require: true },
         availableItems: { type: Number, require: true },
-        image_url: { type: String, require: true },
+        imageURL: { type: String, require: true },
       },
       { timestamps: true }
     )
