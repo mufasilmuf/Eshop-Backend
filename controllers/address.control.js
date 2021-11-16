@@ -42,8 +42,7 @@ exports.AddAdress = async (req, res) => {
 };
 
 exports.findAddress = (req, res) => {
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im11ZmVldGhAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJwaG9uZV9udW1iZXIiOjkwOTUwNDI3ODUsImlhdCI6MTYzNzA3MTUyNiwiZXhwIjoxNjM3MTU3OTI2fQ.SqbQa5tWPqy-Pggf0eR7z3bWsnzb-zJZ0VPWmMTFPXw";
+  const token = req.headers.authorization;
 
   try {
     const decode = jwt.verify(token, "secret100");
