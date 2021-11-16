@@ -15,7 +15,12 @@ exports.Auth = async (req, res) => {
   );
   if (isPasswordValidation) {
     const token = jwt.sign(
-      { email: user.email, role: user.role, isAdim: user.isAdmin },
+      {
+        email: user.email,
+        role: user.role,
+        isAdim: user.isAdmin,
+        phone_number: user.phone_number,
+      },
       "secret100",
       {
         expiresIn: "24h",

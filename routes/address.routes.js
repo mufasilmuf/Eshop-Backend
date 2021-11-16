@@ -5,5 +5,7 @@ module.exports = (app) => {
 
   router.post("/addresses", address.AddAdress);
 
+  router.get("/addresses", address.findAddress);
+
   app.use("/api", router);
 };
