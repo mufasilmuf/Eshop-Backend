@@ -7,29 +7,23 @@ const products = db.products;
 const addresses = db.addresses;
 
 exports.createOrder = async (req, res) => {
-  const token = req.headers.authorization;
+  const token =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im11ZmVldGhAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJwaG9uZV9udW1iZXIiOjkwOTUwNDI3ODUsImlhdCI6MTYzNzEzMzIxMiwiZXhwIjoxNjM3MjE5NjEyfQ.oX1ssu_0_nthQN2tt8aGA8RQ1-e_l1alQcd8iK7Bnwg";
 
   try {
     const decoded = await jwt.verify(token, "secret100");
     const user = await User.findOne({ email: decoded.email, role: "user" });
-    if (!user) {
-      res
-        .status(403)
-        .json({ message: "You are not authorised to access this endpoint!" });
-    }
 
     if (user) {
-      const data = await products.findOne({ _id: req.body.productId });
+      const product = await products.findOne({ _id: req.body.product });
 
-      const product = await products.findOne({ _id: req.body.productId });
-
-      const address = await addresses.findOne({ _id: req.body.addressId });
+      const address = await addresses.findOne({ _id: req.body.address });
 
       const order = new Order({
         user: user,
         product: product,
         address: address,
-        amount: data.price,
+        amount: product.price,
         quantity: req.body.quantity,
       });
 
