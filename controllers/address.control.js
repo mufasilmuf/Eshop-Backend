@@ -18,7 +18,7 @@ exports.AddAdress = async (req, res) => {
         street: req.body.street,
         contactNumber: req.body.contactNumber,
         landmark: req.body.landmark,
-        zipCode: req.body.zipcode,
+        zipCode: req.body.zipCode,
         user: user,
       });
       newAddress
