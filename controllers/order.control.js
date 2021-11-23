@@ -7,8 +7,7 @@ const products = db.products;
 const addresses = db.addresses;
 
 exports.createOrder = async (req, res) => {
-  const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im11ZmVldGhAZ21haWwuY29tIiwicm9sZSI6InVzZXIiLCJwaG9uZV9udW1iZXIiOjkwOTUwNDI3ODUsImlhdCI6MTYzNzEzMzIxMiwiZXhwIjoxNjM3MjE5NjEyfQ.oX1ssu_0_nthQN2tt8aGA8RQ1-e_l1alQcd8iK7Bnwg";
+  const token = req.headers.authorization;
 
   try {
     const decoded = await jwt.verify(token, "secret100");
