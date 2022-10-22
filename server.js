@@ -1,6 +1,7 @@
 const express = require("express");
 bodyParser = require("body-parser");
 const cors = require("cors");
+require("dotenv").config();
 
 //it create a webserver....
 const app = express();
@@ -49,6 +50,8 @@ require("./routes/address.routes")(app);
 require("./routes/products.routes")(app);
 
 require("./routes/order.routes")(app);
+
+require("./routes/myuse.routes")(app);
 
 const PORT = process.env.PORT || 8085;
 
